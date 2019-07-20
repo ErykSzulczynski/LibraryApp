@@ -1,0 +1,16 @@
+.login__box{
+    width: 25%;
+    margin-top: 18%;
+    margin-left: 37.5%;
+}
+
+.login__logo{
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+}
+
+.login__btn{
+    display: block;
+    margin: 0 auto;
+}

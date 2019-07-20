@@ -1,0 +1,9 @@
+<?php
+    require_once('./view/header.php');
+?>
+<body>
+<?php
+    require_once('./view/sidebar.php');
+?>
+</body>
+</html>
