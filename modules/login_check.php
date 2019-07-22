@@ -34,6 +34,7 @@
 
                         else{
                             header('Location: /MagicLibrary/index.php');
+                            $_SESSION['user'] = $login;
                         }
 
                         }
