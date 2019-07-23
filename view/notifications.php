@@ -3,11 +3,17 @@
         Notifications
     </div>
     <div class="card-body">
-        <h5 class="card-title">
-            Light card title
-        </h5>
         <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+            <?php
+                $sth = $db_connect->prepare("SELECT title, date_end FROM borrows WHERE user = ?");
+                $sth->execute([$user]);
+
+                while($row = $sth->fetch(PDO::FETCH_ASSOC)){
+                    if($row['date_end'] < date('Y-m-d')){
+                        echo "<p>You're late with giving back: ".$row['title']."</p>";
+                    }
+                }
+            ?>
         </p>
     </div>
 </div>
