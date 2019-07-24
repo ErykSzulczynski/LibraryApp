@@ -29,7 +29,7 @@
         <div class="row2 my-5">
         <?php
             require_once('./view/notifications.php');
-            require_once('./view/reservations.php');
+            require_once('./view/reservations_view.php');
         ?>
         </div>
     </div>

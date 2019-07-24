@@ -7,20 +7,21 @@
                     $sth = $db_connect->prepare("SELECT title, date_end FROM borrows WHERE user = ?");
                     $sth->execute([$user]);
 
-                    $book_res = $db_connect->prepare("SELECT book_id FROM reservations WHERE user = ?");
+                    $book_res = $db_connect->prepare("SELECT id, book_id FROM reservations WHERE user = ?");
                     $book_res->execute([$user]);
 
                     $book_view = $db_connect->prepare("SELECT title, author FROM books WHERE id = ?");
                     
                     while($row = $book_res->fetch(PDO::FETCH_ASSOC)){
                         $book_id = $row['book_id'];
+                        $res_id = $row['id'];
                         $book_view->execute([$book_id]);
 
                         while($row2 = $book_view->fetch(PDO::FETCH_ASSOC)){
                             echo "<tr>";
                             echo "<td>".$row2['title']."</td>";
                             echo "<td>".$row2['author']."</td>";
-                            echo "<td><button type='button' class='btn btn-danger'>Resign</button></td>";
+                            echo '<td><button type="button" class="btn btn-danger" onclick="document.location=\'modules/reservation_close.php?book_id='.$book_id.'&res_id='.$res_id.'\'">Resign</button></td>';
                             echo "</tr>";
                         }
                     }

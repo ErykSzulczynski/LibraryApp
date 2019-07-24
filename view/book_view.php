@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <?php
-            $sth = $db_connect->prepare("SELECT title, author, book_type, is_available FROM books");
+            $sth = $db_connect->prepare("SELECT id, title, author, book_type, is_available FROM books");
             $sth->execute();
                             
             while($row = $sth->fetch(PDO::FETCH_ASSOC)){
@@ -23,7 +23,7 @@
             else{
                 echo "<td><button type='button' class='btn btn-danger'>Not Available</button></td>";
             }
-            echo "<td><button type='button' class='btn btn-primary'>Reserve</button></td>";
+            echo '<td><button onclick="document.location=\'modules/reservation_open.php?id='.$row['id'].'\'" class="btn btn-primary">Reserve</button></td>';
             echo "</tr>";
             }
                             
