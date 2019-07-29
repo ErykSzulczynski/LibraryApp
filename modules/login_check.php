@@ -28,13 +28,19 @@
 
                     if(password_verify($password, $result_user['pass']) == true){
 
-                        if($db_connect->query('SELECT user_type FROM users') == "admin"){
-                            header('Location: admin.php');
+                        $_SESSION['user'] = $login;
+
+                        $user_type = $db_connect->prepare("SELECT user_type FROM users WHERE user = ?");
+                        $user_type->execute([$login]);
+                        $user_type_result = $user_type->fetchColumn();
+
+
+                        if($user_type_result == "admin"){
+                            header('Location: /MagicLibrary/admin.php');
                         }
 
                         else{
                             header('Location: /MagicLibrary/index.php');
-                            $_SESSION['user'] = $login;
                         }
 
                         }

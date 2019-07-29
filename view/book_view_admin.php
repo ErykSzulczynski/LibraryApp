@@ -4,6 +4,7 @@
         <th scope="col" class = 'px-4'>Title</th>
         <th scope="col" class = 'px-4'>Author</th>
         <th scope="col" class = 'px-4'>Type</th>
+        <th scope="col"><button class = "btn btn-success">Add</button></th>
         </tr>
     </thead>
     <tbody>
@@ -22,8 +23,8 @@
             else{
                 echo "<td><button type='button' class='btn btn-danger mr-5'>Not Available</button>";
             }
-            echo '<button onclick="document.location=\'modules/reservation_open.php?id='.$row['id'].'\'" class="btn btn-primary mr-5">Reserve</button>';
-            echo '<button type="button" class="btn btn-info">Details</button></td>';
+            echo '<button type="button" class="btn btn-info mr-5">Details</button>';
+            echo '<button type="button" class="btn btn-dark">Edit</button></td>';
             echo "</tr>";
             }
          ?>
