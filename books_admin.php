@@ -10,6 +10,7 @@
 ?>
 <body>
 <div class="container">
+    <div id = "modal__container"></div>
     <div class="sidebar__wrapper pt-4">
         <?php
             require_once('./view/sidebar_admin.php');
@@ -29,4 +30,5 @@
     </div>
 </div>
 </body>
+<script src="js/script.js"></script>
 </html>

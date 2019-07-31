@@ -49,3 +49,8 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+.modal__styled{
+    position: absolute !important;
+    right: 20%;
+}
