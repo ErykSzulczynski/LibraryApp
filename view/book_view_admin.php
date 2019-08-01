@@ -4,7 +4,7 @@
         <th scope="col" class = 'px-4'>Title</th>
         <th scope="col" class = 'px-4'>Author</th>
         <th scope="col" class = 'px-4'>Type</th>
-        <th scope="col"><button class = "btn btn-success">Add</button></th>
+        <th scope="col"><button class = "btn btn-success" onclick= 'ViewAddModal()'>Add</button></th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +17,7 @@
                 $author = $row['author'];
                 $details = $row['details'];
                 $type = $row['book_type'];
+                $availability = $row['is_available'];
                 echo "<tr>";
                 echo "<td class = 'px-4'>$title</td>";
                 echo "<td class = 'px-4'>$author</td>";
@@ -28,7 +29,8 @@
                     echo "<td><button type='button' class='btn btn-danger mr-5'>Not Available</button>";
                 }                
                 echo "<button type='button' class='btn btn-info mr-5' onclick='ViewDetailModal(\"$title\",\"$author\",\"$details\")'>Details</button>";
-                echo '<button type="button" class="btn btn-dark">Edit</button></td>';
+                echo "<button type='button' class='btn btn-dark mr-5' onclick='ViewEditModal(\"$title\",\"$author\",\"$details\",$availability)'>Edit</button>";
+                echo '<button type="button" class="btn btn-danger" onclick="ViewDeleteModal()">Delete</button></td>';
                 echo "</tr>";
             }
          ?>
