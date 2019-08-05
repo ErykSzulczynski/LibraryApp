@@ -13,6 +13,7 @@
             $sth->execute();
                             
             while($row = $sth->fetch(PDO::FETCH_ASSOC)){
+                $id = $row['id'];
                 $title = $row['title'];
                 $author = $row['author'];
                 $details = $row['details'];
@@ -28,8 +29,8 @@
                 else{
                     echo "<td><button type='button' class='btn btn-danger mr-5'>Not Available</button>";
                 }                
-                echo "<button type='button' class='btn btn-info mr-5' onclick='ViewDetailModal(\"$title\",\"$author\",\"$details\")'>Details</button>";
-                echo "<button type='button' class='btn btn-dark mr-5' onclick='ViewEditModal(\"$title\",\"$author\",\"$details\",$availability)'>Edit</button>";
+                echo "<button type='button' class='btn btn-info mr-5' onclick='ViewDetailModal(\"$title\",\"$author\",\"$type\",\"$details\")'>Details</button>";
+                echo "<button type='button' class='btn btn-dark mr-5' onclick='ViewEditModal($id, \"$title\",\"$author\",\"$details\",\"$type\", $availability)'>Edit</button>";
                 echo '<button type="button" class="btn btn-danger" onclick="ViewDeleteModal()">Delete</button></td>';
                 echo "</tr>";
             }
