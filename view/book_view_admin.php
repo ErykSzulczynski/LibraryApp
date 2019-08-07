@@ -4,14 +4,15 @@
         <th scope="col" class = 'px-4'>Title</th>
         <th scope="col" class = 'px-4'>Author</th>
         <th scope="col" class = 'px-4'>Type</th>
-        <th scope="col"><button class = "btn btn-success" onclick= 'ViewAddModal()'>Add</button></th>
-        </tr>
-    </thead>
-    <tbody>
         <?php
             $sth = $db_connect->prepare("SELECT id, title, author, book_type, details, is_available FROM books");
             $sth->execute();
-                            
+            echo "<th scope='col'><button class = 'btn btn-success' onclick='ViewAddModal()'>Add</button></th>";
+        ?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php                            
             while($row = $sth->fetch(PDO::FETCH_ASSOC)){
                 $id = $row['id'];
                 $title = $row['title'];
@@ -20,6 +21,7 @@
                 $type = $row['book_type'];
                 $availability = $row['is_available'];
                 echo "<tr>";
+                echo "<td id = 'row__id' value = '$id' class = 'px-4'>$id</td>";
                 echo "<td class = 'px-4'>$title</td>";
                 echo "<td class = 'px-4'>$author</td>";
                 echo "<td class = 'px-4'>$type</td>";
