@@ -33,7 +33,7 @@
                 }                
                 echo "<button type='button' class='btn btn-info mr-5' onclick='ViewDetailModal(\"$title\",\"$author\",\"$type\",\"$details\")'>Details</button>";
                 echo "<button type='button' class='btn btn-dark mr-5' onclick='ViewEditModal($id, \"$title\",\"$author\",\"$details\",\"$type\", $availability)'>Edit</button>";
-                echo '<button type="button" class="btn btn-danger" onclick="ViewDeleteModal()">Delete</button></td>';
+                echo "<button type='button' class='btn btn-danger' onclick='ViewDeleteModal($id)'>Delete</button></td>";
                 echo "</tr>";
             }
          ?>

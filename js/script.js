@@ -75,9 +75,8 @@ function ViewEditModal(id, title, author, details, type, availavility){
   "</div>";
 }
 
-function ViewDeleteModal(){
+function ViewDeleteModal(id){
   var container = document.getElementById('modal__container');
-  var id = document.getElementById('row__id').value;
 
   container.innerHTML = 
   "<div id='myModal' role='dialog' class='position-absolute' style = 'z-index: 1; left: 40%;'>" +
@@ -88,7 +87,7 @@ function ViewDeleteModal(){
         "<span>Are you sure, that you want to delete this book (id: " + id + ")?</span>" +
       "</div>" +
       "<div class='modal-footer'>" +
-        "<button type='submit' class='btn btn-success'>Submit</button>" +
+        "<button type='button' class='btn btn-success' onclick='document.location=\"modules/book_delete.php?id=" + id + "\"'>Submit</button>" +
         "<button type='button' class='btn btn-default' onclick='RemoveModal()'>Close</button>" +
       "</div>" +
     "</div>" +
