@@ -27,6 +27,16 @@ function RemoveModal(){
     element.parentNode.removeChild(element);
 }
 
+function ViewBorrowAddModal(){
+  var element = document.getElementById('modal__container');
+  element.style.display = "block";
+}
+
+function HideBorrowAddModal(){
+  var element = document.getElementById('modal__container');
+  element.style.display = "none";
+}
+
 function ViewEditModal(id, title, author, details, type, availavility){
   var container = document.getElementById('modal__container');
   
