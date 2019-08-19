@@ -2,7 +2,7 @@ function ViewDetailModal(title, author, type, details){
     var container = document.getElementById('modal__container');
     
     container.innerHTML = 
-    "<div id='myModal' role='dialog' class='position-absolute' style = 'z-index: 1; left: 40%;'>" +
+    "<div id='myModal' role='dialog' class='position-absolute w-100'  style = 'z-index: 1'>" +
     "<div class='modal-dialog'>" +
     
       "<div class='modal-content'>" +
@@ -41,7 +41,7 @@ function ViewEditModal(id, title, author, details, type, availavility){
   var container = document.getElementById('modal__container');
   
   container.innerHTML = 
-  "<div id='myModal' role='dialog' class='position-absolute' style = 'z-index: 1; left: 40%;'>" +
+  "<div id='myModal' role='dialog' class='position-absolute w-100' style = 'z-index: 1'>" +
   "<div class='modal-dialog'>" +
   
     "<div class='modal-content'>" +
@@ -89,7 +89,7 @@ function ViewDeleteModal(id){
   var container = document.getElementById('modal__container');
 
   container.innerHTML = 
-  "<div id='myModal' role='dialog' class='position-absolute' style = 'z-index: 1; left: 40%;'>" +
+  "<div id='myModal' role='dialog' class='position-absolute w-100' style = 'z-index: 1'>" +
   "<div class='modal-dialog'>" +
   
     "<div class='modal-content'>" +
@@ -109,7 +109,7 @@ function ViewAddModal(){
   var container = document.getElementById('modal__container');
   
   container.innerHTML = 
-  "<div id='myModal' role='dialog' class='position-absolute' style = 'z-index: 1; left: 40%;'>" +
+  "<div id='myModal' role='dialog' class='position-absolute w-100' style = 'z-index: 1'>" +
   "<div class='modal-dialog'>" +
   
     "<div class='modal-content'>" +

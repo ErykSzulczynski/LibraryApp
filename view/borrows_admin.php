@@ -1,5 +1,5 @@
 <div id = "modal__container" style = "display: none;">
-    <div id='myModal' role='dialog' class='position-absolute' style = ' z-index: 1; left: 40%;'>
+    <div id='myModal' role='dialog' class='position-absolute w-100'>
         <div class='modal-dialog'>
             <div class='modal-content'>
                 <div class='modal-header'>
@@ -48,7 +48,7 @@
     </div>
 </div>
 <div id='modal__container--revoke' style = 'display: none;'>
-    <div id='myModal' role='dialog' class='position-absolute' style = ' z-index: 1; left: 40%;'>
+    <div id='myModal' role='dialog' class='position-absolute w-100'>
         <div class='modal-dialog'>
             <div class='modal-content'>
                 <div class='modal-header'>
@@ -59,7 +59,6 @@
                     </div>
                     <div class='modal-footer'>
                         <div id="button__container"></div>
-                        <!--<button type='button' class='btn btn-success'>Revoke</button>-->
                         <button type='button' class='btn btn-danger' onclick = HideRevokeModal()>Close</button>
                     </div>
             </div>
