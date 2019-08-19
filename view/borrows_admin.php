@@ -47,6 +47,25 @@
         </div>
     </div>
 </div>
+<div id='modal__container--revoke' style = 'display: none;'>
+    <div id='myModal' role='dialog' class='position-absolute' style = ' z-index: 1; left: 40%;'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h4 class='modal-title'>Revoke</h4>
+                </div>
+                    <div class='modal-body'>
+                        <span>Are you sure, that you want to revoke this borrow?</span>
+                    </div>
+                    <div class='modal-footer'>
+                        <div id="button__container"></div>
+                        <!--<button type='button' class='btn btn-success'>Revoke</button>-->
+                        <button type='button' class='btn btn-danger' onclick = HideRevokeModal()>Close</button>
+                    </div>
+            </div>
+        </div>
+    </div>   
+</div>  
 <table class="table">
     <thead>
         <tr>
@@ -74,7 +93,7 @@
             echo "<td>". $row['date_start'] ."</td>";
             echo "<td>". $row['date_end'] ."</td>";
             echo "<td>". $row['user'] ."</td>";
-            echo "<td><button class = 'btn btn-danger'>Revoke</button></td>";
+            echo "<td><button class = 'btn btn-danger' onclick='RevokeModal(".$row['id'].")'>Revoke</button></td>";
             echo "</tr>";
             }
             

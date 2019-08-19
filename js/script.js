@@ -148,3 +148,15 @@ function ViewAddModal(){
     
   "</div>";
 }
+
+function RevokeModal(id){
+  var revokeModal = document.getElementById('modal__container--revoke');
+  var buttonContainer = document.getElementById('button__container');
+  buttonContainer.innerHTML = "<button type='button' class='btn btn-success' onclick='document.location=\"modules/borrow_delete.php?id=" + id + "\"'>Revoke</button>";
+  revokeModal.style.display = "block";
+}
+
+function HideRevokeModal(){
+  var revokeModal = document.getElementById('modal__container--revoke');
+  revokeModal.style.display = "none";
+}
